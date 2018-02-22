@@ -34,9 +34,9 @@ gchar 				*	Log_File_Path;
 
 
 //the help and description of the command line
-char * Argument_Order = "Destination_IP Destination_Port Source_Port";
+const char * Argument_Order = "Destination_IP Destination_Port Source_Port";
 
-char * Description =
+const char * Description =
 "The parameters have to be entered manner shown \n\
 NOTES:\n\ 
 - Destination_Port and Source_Port have to be different\n\
@@ -59,7 +59,7 @@ This command will send periodically every 2 ms (2000 us) with \
 a datapayload of 32 bytes and logs into the file /home/Thomas/log.txt\n\n\
 ";
 
-char * Summary = 
+const char * Summary = 
 "This programm sends a UDP datagram containing a timestap and a counter value\n\
 to the destination address via the destination port. It is expected that the\n\
 sent package will be bounced back to this computer. The program will listen to\n\

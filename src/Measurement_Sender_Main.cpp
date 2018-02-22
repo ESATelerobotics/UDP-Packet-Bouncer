@@ -47,12 +47,12 @@ void * receiver(void * Data)
 	struct timespec		Message_Delay;
 	struct timespec		Data_Received;
 	struct timespec		Time_Difference;
-	long			Bounced_Counter = -1;
-	long			Bounced_Counter_Prev = 0;
-	char			Data_Buffer[Max_Payload_Data_Size];
-	unsigned		Lost_Messages = 0;
+	long				Bounced_Counter = -1;
+	long				Bounced_Counter_Prev = 0;
+	char				Data_Buffer[Max_Payload_Data_Size];
+	unsigned			Lost_Messages = 0;
 	std::ofstream 		Log_File;
-	char 			Output_String[512];
+	char 				Output_String[512];
 	
 	
 	if (Log_File_Path == NULL)
@@ -64,7 +64,7 @@ void * receiver(void * Data)
 	{
 	  printf("Logging to: %s\n", Log_File_Path);
 	  Log_File.open(Log_File_Path);
-	  if (Log_File==NULL)
+	  if (!Log_File.is_open())
 	  {
 	    printf("-- ERROR: could not create log file - check path/permissions\n");
 	    exit(EXIT_FAILURE);
