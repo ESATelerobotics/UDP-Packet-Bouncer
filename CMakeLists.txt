@@ -6,7 +6,8 @@ set(CMAKE_MODULE_PATH
 ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 #find glib
-FIND_PACKAGE(GLIB REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_search_module(GLIB REQUIRED glib-2.0)
 
 #definition of common header and source files
 set (COMMON_HEADERS
